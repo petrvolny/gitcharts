@@ -10,7 +10,7 @@ GetOptions(
 	'p=s'      => sub { $opts->{'p'}        = $_[1] },
 	'r=s'      => sub { $opts->{'r'}        = $_[1] },
 	'd=s'      => sub { $opts->{'d'}        = $_[1] },
-	'help'      => sub { print "perldoc $0\n"; exit },
+	'help'     => sub { print "perldoc $0\n"; exit },
 ) or die("Error in command line arguments\n");
 die "Project must be specified" if $opts->{r} and not $opts->{p};
 my $days = $opts->{d} || 10;
@@ -24,18 +24,18 @@ my @p_detail = ( 'linux', 'git' );
 
 my $reports = {
 	winners => {
-		size    => 2652,
-		commits => 3,
-		a_lines => 154,
-		r_lines => 23,
+		size    => [ 2652, 'Andriy Skulysh' ],
+		commits => [ 3,    'Andriy Skulysh' ],
+		a_lines => [ 154,  'Andriy Skulysh' ],
+		r_lines => [ 23,   'Andrew Morton' ],
 	},
 	summary => {
-		size    => 501238853,
-		commits => 489234,
-		files   => 39768,
-		authors => 15214,
+		size    => [501238853],
+		commits => [489234],
+		files   => [39768],
+		authors => [15214],
 	},
-	files_changed => { sum => $days * int rand(93), },
+	files_changed => { sum => [ $days * int rand(93) ] },
 	last_x_days => {
 		commits => undef,
 		size    => undef,
@@ -109,12 +109,7 @@ B<Projects> = < projects : [{ name : String, uri : String }] >
 
 B<Reports> = < reports : [{ name : String, uri : String }] >
 
-B<Result> = < result :
-		{ MetricName : String } |
-		{ x : String,
-		  metrics : { MetricName : [ String ] }
-		}
->
+B<Result> = < result : { x : [ String ], metrics : { MetricName : [ String ] } } >
 
 B<MetricName> = String;
 
@@ -134,7 +129,8 @@ B<MetricName> = String;
 
 =head1 NOTES
 
-Though the report last_x_days have a lot of metrics, client should
+[] - empty array in Result, metrics represents no result.
+hough the report last_x_days have a lot of metrics, client should
 visualise this report as 4 different reports - as shown in the picture.
 
 Reports ( Title - report name : metrics: ... ):
