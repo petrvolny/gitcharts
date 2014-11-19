@@ -89,15 +89,15 @@ gitdemo.pl
 
 =head1 RESOURCES
 
-B</project>
+B</p> - project resource
 
 GET * -> <Projects>
 
-B</project/<p>>B</report>
+B</p/<p>>B</r> - report resource
 
 GET * -> Reports
 
-B</project/<p>>B</report/<r>>
+B</p/<p>>B</r/<r>> - report result resource
 
 GET : days=INT -> Result
 
@@ -117,19 +117,19 @@ B<MetricName> = String;
 
 =over
 
-=item B<gitdemo.pl> - response to /project resource.
+=item B<gitdemo.pl> - response to /p resource.
 
-=item B<gitdemo.pl -p linux -r ''> - response to /project/<p>/report.
+=item B<gitdemo.pl -p linux -r ''> - response to /p/<p>/r.
 
-=item B<gitdemo.pl -p linux -r summary> - /project/<p>/report/<r>
+=item B<gitdemo.pl -p linux -r summary> - /p/<p>/r/<r>
 
-=item B<gitdemo.pl -p linux -r last_x_days -d 3> - /project/<p>/report/<r>?days=n.
+=item B<gitdemo.pl -p linux -r last_x_days -d 3> - /p/<p>/r/<r>?days=n.
 
 =back
 
 =head1 NOTES
 
-[] - empty array in Result, metrics represents no result.
+[] - empty array in <Result, metrics> represents no result.
 hough the report last_x_days have a lot of metrics, client should
 visualise this report as 4 different reports - as shown in the picture.
 
