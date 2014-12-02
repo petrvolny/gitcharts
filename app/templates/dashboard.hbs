@@ -3,15 +3,19 @@
         <div class="repo-summary-text">
             There are <span class="bold-text">489234 commits</span> from <span class="bold-text">15214 authors</span> in <span class="bold-text">39768 files</span>. Approximate size of the repository is <span class="bold-text">501 MB</span>.
         </div>
-        <div class="repo-summary-slider">
-        {{jqui-slider value=num min=0 max=30 step=21 slide="slideAction"}}
-        </div>
     </div>
 </div>
 <hr>
 <div class="days-filter">
     <div class="days-filter-text">Analyze the last 21 days</div>
+    <div class="days-filter-slider">
+        <div class="slider-min">0</div>
+        {{jqui-slider value=21 min=0 max=30 step=1 slide="slideAction"}}
+        <div class="slider-max">30</div>
+    </div>
 </div>
+
+<div class="dash-headline">TOP ACHIEVERS</div>
 <div class="winners">
     <div class="row">
         <div class="col-sm-3">
