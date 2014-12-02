@@ -1,30 +1,18 @@
 <div class="summary">
-    Summary
     <div class="row">
-        <div class="col-sm-3">
-            <div class="dash-card">
-                <span class="dash-card-header">Commits</span>
-            </div>
+        <div class="repo-summary-text">
+            There are <span class="bold-text">489234 commits</span> from <span class="bold-text">15214 authors</span> in <span class="bold-text">39768 files</span>. Approximate size of the repository is <span class="bold-text">501 MB</span>.
         </div>
-        <div class="col-sm-3">
-            <div class="dash-card">
-                <span class="dash-card-header">MB</span>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="dash-card">
-               <span class="dash-card-header">Files</span>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="dash-card">
-                <span class="dash-card-header">Authors</span>
-            </div>
+        <div class="repo-summary-slider">
+        {{jqui-slider value=num min=0 max=30 step=21 slide="slideAction"}}
         </div>
     </div>
 </div>
+<hr>
+<div class="days-filter">
+    <div class="days-filter-text">Analyze the last 21 days</div>
+</div>
 <div class="winners">
-    Winners
     <div class="row">
         <div class="col-sm-3">
             <div class="dash-card">

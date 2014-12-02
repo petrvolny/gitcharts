@@ -1,7 +1,51 @@
 @import "bootstrap";
 
+@navbar-height: 50px;
+@margin: 15px;
+
+.dash-card-common {
+    background: #FFFFFF;
+    -moz-box-shadow:    0px 0px 9px 0px #ECECEC;
+    -webkit-box-shadow: 0px 0px 9px 0px #ECECEC;
+    box-shadow:         0px 0px 9px 0px #ECECEC;
+}
+
 .navbar {
-    background-color: #2C0B4A;
+    background-color: #D4D4D4;
+    height: @navbar-height;
+}
+
+.repo-summary-text {
+    text-align: center;
+    margin: 20px @margin 20px @margin;
+
+    font-family: HelveticaNeue-UltraLight;
+    font-size: 26px;
+    color: #222222;
+    line-height: 31px;
+
+    .bold-text {
+        font-family: HelveticaNeue-Light;
+    }
+}
+
+.days-filter {
+    margin: 10px auto 10px auto;
+    padding: 6px;
+    width: 480px;
+    height: 70px;
+
+    .dash-card-common;
+
+    .days-filter-text {
+        margin: 0 auto 0 auto;
+        text-align: center;
+        font-family: HelveticaNeue-Thin;
+        font-size: 18px;
+        color: #000000;
+        line-height: 22px;
+        letter-spacing: 1px;
+    }
 }
 
 .navbar-brand {
@@ -10,15 +54,15 @@
 
 .app-content {
     max-width: 970px;
-    margin: 10px auto 0 auto;
-    background-color: #EEEEEE;
+    margin: @navbar-height auto 0 auto;
+    background: #F9F9F9;
 }
 
 .dash-card {
-    height: 60px;
-    background-color: white;
-    border: 1px solid #CCCCCC;
+    height: 100px;
     margin: 15px 0 15px 0;
+
+    .dash-card-common;
 }
 
 .dash-card-header {
