@@ -3,7 +3,24 @@
 @navbar-height: 50px;
 @margin: 15px;
 
+hr {
+    margin-top: 5px;
+}
+
+.red {
+    color: #EC7F7F;
+}
+
+.green {
+    color: #81C870
+}
+
+.blue {
+    color: #7F96EC;
+}
+
 .dash-card-common {
+    margin: 15px 0 15px 0;
     background: #FFFFFF;
     -moz-box-shadow:    0px 0px 9px 0px #ECECEC;
     -webkit-box-shadow: 0px 0px 9px 0px #ECECEC;
@@ -30,6 +47,7 @@
 }
 
 .days-filter {
+    .dash-card-common;
     margin: 30px auto 10px auto;
     padding: 6px;
     width: 480px;
@@ -41,7 +59,6 @@
     line-height: 22px;
     letter-spacing: 1px;
 
-    .dash-card-common;
 
     .ui-slider {
         width: 390px;
@@ -97,13 +114,6 @@
     background: #F9F9F9;
 }
 
-.dash-card {
-    height: 100px;
-    margin: 15px 0 15px 0;
-
-    .dash-card-common;
-}
-
 .dash-headline {
     font-family: HelveticaNeue-Thin;
     font-size: 20px;
@@ -114,15 +124,43 @@
     text-align: center;
 }
 
+.dash-card {
+    .dash-card-common;
+    height: 100px;
+    padding: 4px;
+    text-align: center;
+}
+
 .dash-card-header {
-    margin-top: 5px;
-    color: #CCCCCC;
-    .center-block();
+    margin-top: 4px;
+    font-family: HelveticaNeue-Light;
+    font-size: 13px;
+    color: #979797;
+    line-height: 16px;
+    letter-spacing: 0px;
+}
+
+.dash-card-value {
+    margin: 1px;
+    font-family: HelveticaNeue-Light;
+    font-size: 40px;
+    line-height: 49px;
+    letter-spacing: 3px;
+
+    .size-unit {
+        font-size: 24px;
+    }
+}
+
+.dash-card-footer {
+    font-family: HelveticaNeue-Light;
+    font-size: 13px;
+    color: #979797;
+    line-height: 16px;
+    letter-spacing: 0px;
 }
 
 .dash-chart {
-    height: 200px;
-    margin: 15px 0 15px 0;
-    background-color: white;
-    border: 1px solid #CCCCCC;
+    .dash-card-common;
+    height: 300px;
 }

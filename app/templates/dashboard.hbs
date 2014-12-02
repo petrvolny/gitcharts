@@ -7,35 +7,43 @@
 </div>
 <hr>
 <div class="days-filter">
-    <div class="days-filter-text">Analyze the last 21 days</div>
+    <div class="days-filter-text">Analyze the last {{days}} days</div>
     <div class="days-filter-slider">
         <div class="slider-min">0</div>
-        {{jqui-slider value=21 min=0 max=30 step=1 slide="slideAction"}}
+        {{jqui-slider value=days min=1 max=30 step=1 slide="slideAction"}}
         <div class="slider-max">30</div>
     </div>
 </div>
 
 <div class="dash-headline">TOP ACHIEVERS</div>
-<div class="winners">
+<div class="top-achievers">
     <div class="row">
         <div class="col-sm-3">
             <div class="dash-card">
-                <span class="dash-card-header">Lines Added</span>
+                <div class="dash-card-header">Andrew Norton</div>
+                <div class="dash-card-value red">23</div>
+                <div class="dash-card-footer">Lines Deleted</div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="dash-card">
-                <span class="dash-card-header">Lines Deleted</span>
+                <div class="dash-card-header">Andriy Skulish</div>
+                <div class="dash-card-value green">154</div>
+                <div class="dash-card-footer">Lines Added</div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="dash-card">
-               <span class="dash-card-header"># of Commits</span>
+                <div class="dash-card-header">Andriy Skulish</div>
+                <div class="dash-card-value blue">6</div>
+                <div class="dash-card-footer"># of commits</div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="dash-card">
-                <span class="dash-card-header">Size</span>
+                <div class="dash-card-header">Andriy Skulish</div>
+                <div class="dash-card-value green">2.6<span class="size-unit">kB</span></div>
+                <div class="dash-card-footer">Size</div>
             </div>
         </div>
     </div>
@@ -44,11 +52,13 @@
 <div class="charts">
     <div class="row">
         <div class="col-sm-6">
+            <div class="dash-headline">COMMITS</div>
             <div class="dash-chart">
                 <span class="dash-card-header">Chart 1</span>
             </div>
         </div>
         <div class="col-sm-6">
+            <div class="dash-headline">SIZE</div>
             <div class="dash-chart">
                 <span class="dash-card-header">Chart 2</span>
             </div>
