@@ -6,6 +6,10 @@ export default Ember.Route.extend({
         // the properly parametrized route.
         var project = params.project_id || 'linux';
 
-        return Ember.$.getJSON('/p/'+project+'/r/last_x_days?days=30');
+        return Ember.Object.create({
+            summary: Ember.$.getJSON('/p/'+project+'/r/summary'),
+            topAchievers: Ember.$.getJSON('/p/'+project+'/r/winners'),
+            reports: Ember.$.getJSON('/p/'+project+'/r/last_x_days?days=30')
+        });
     }
 });
