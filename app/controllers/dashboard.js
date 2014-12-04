@@ -56,12 +56,8 @@ export default Ember.Controller.extend({
     linesTotals: function() {
         if (this.get('reports')) {
             return {
-                added: this.get('reports').reduce(function(prev, curr) {
-                    return prev + curr.lines_a;
-                }, 0),
-                deleted: this.get('reports').reduce(function(prev, curr) {
-                    return prev + curr.lines_r;
-                }, 0)
+                added: this._sumFor('reports', 'lines_a'),
+                deleted: this._sumFor('reports', 'lines_r')
             };
         } else {
             return { added: 0, deleted: 0 };
@@ -71,18 +67,18 @@ export default Ember.Controller.extend({
     filesTotals: function() {
         if (this.get('reports')) {
             return {
-                added: this.get('reports').reduce(function(prev, curr) {
-                    return prev + curr.files_a;
-                }, 0),
-                deleted: this.get('reports').reduce(function(prev, curr) {
-                    return prev + curr.files_r;
-                }, 0),
-                changed: this.get('reports').reduce(function(prev, curr) {
-                    return prev + curr.files_c;
-                }, 0)
+                added: this._sumFor('reports', 'files_a'),
+                deleted: this._sumFor('reports', 'files_r'),
+                changed: this._sumFor('reports', 'files_c')
             };
         } else {
             return { added: 0, deleted: 0, changed: 0 };
         }
     }.property('reports'),
+
+    _sumFor: function(arr, key) {
+        return this.get(arr).reduce(function(prev, curr) {
+            return prev + curr[key];
+        }, 0);
+    }
 });
