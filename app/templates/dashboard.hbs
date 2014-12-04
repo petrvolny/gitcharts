@@ -54,13 +54,13 @@
         <div class="col-sm-6">
             <div class="dash-headline">COMMITS</div>
             <div class="dash-chart">
-                <span class="dash-card-header">Chart 1</span>
+                {{bar-chart data=reports xKey='date' yKey='commits'}}
             </div>
         </div>
         <div class="col-sm-6">
             <div class="dash-headline">SIZE</div>
             <div class="dash-chart">
-                <span class="dash-card-header">Chart 2</span>
+                {{bar-chart data=reports xKey='date' yKey='size'}}
             </div>
         </div>
     </div>

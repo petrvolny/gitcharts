@@ -24,5 +24,6 @@ var app = new EmberApp({
 // along with the exports of each module as its value.
 
 app.import('bower_components/morris/morris.js');
+app.import('bower_components/raphael/raphael.js');
 
 module.exports = app.toTree();
