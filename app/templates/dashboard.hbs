@@ -67,11 +67,16 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="dash-chart">
+                {{filesTotals.added}}
+                {{filesTotals.deleted}}
+                {{filesTotals.changed}}
                 {{line-chart data=reports xKey='date' yKey1='files_a' yKey2="files_r" yKey3='files_c'}}
             </div>
         </div>
         <div class="col-sm-6">
             <div class="dash-chart">
+                {{linesTotals.added}}
+                {{linesTotals.deleted}}
                 {{line-chart data=reports xKey='date' yKey1='lines_a' yKey2="lines_r"}}
             </div>
         </div>

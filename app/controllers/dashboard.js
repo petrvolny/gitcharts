@@ -51,5 +51,38 @@ export default Ember.Controller.extend({
                 };
             }));
         }.bind(this));
-    }.observes('content')
+    }.observes('content'),
+
+    linesTotals: function() {
+        if (this.get('reports')) {
+            return {
+                added: this.get('reports').reduce(function(prev, curr) {
+                    return prev + curr.lines_a;
+                }, 0),
+                deleted: this.get('reports').reduce(function(prev, curr) {
+                    return prev + curr.lines_r;
+                }, 0)
+            };
+        } else {
+            return { added: 0, deleted: 0 };
+        }
+    }.property('reports'),
+
+    filesTotals: function() {
+        if (this.get('reports')) {
+            return {
+                added: this.get('reports').reduce(function(prev, curr) {
+                    return prev + curr.files_a;
+                }, 0),
+                deleted: this.get('reports').reduce(function(prev, curr) {
+                    return prev + curr.files_r;
+                }, 0),
+                changed: this.get('reports').reduce(function(prev, curr) {
+                    return prev + curr.files_c;
+                }, 0)
+            };
+        } else {
+            return { added: 0, deleted: 0, changed: 0 };
+        }
+    }.property('reports'),
 });
