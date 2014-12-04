@@ -35,7 +35,21 @@ export default Ember.Controller.extend({
 
         // Prepare model for charts
         this.get('content.reports').then(function(res) {
-            this.set('content.reports', res);
+            var dates = res.report.x;
+            var metrics = res.report.metrics;
+
+            this.set('reports', dates.map(function(date, idx) {
+                return {
+                    date: date,
+                    commits: metrics.commits[idx],
+                    files_a: metrics.files_a[idx],
+                    files_r: metrics.files_r[idx],
+                    files_c: metrics.files_c[idx],
+                    lines_a: metrics.lines_a[idx],
+                    lines_r: metrics.lines_r[idx],
+                    size: metrics.size[idx]
+                };
+            }));
         }.bind(this));
     }.observes('content')
 });
