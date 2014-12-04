@@ -20,29 +20,29 @@
     <div class="row">
         <div class="col-sm-3">
             <div class="dash-card">
-                <div class="dash-card-header">Andrew Norton</div>
-                <div class="dash-card-value red">23</div>
+                <div class="dash-card-header">{{topAchievers.lines_r.winner}}</div>
+                <div class="dash-card-value red">{{topAchievers.lines_r.value}}</div>
                 <div class="dash-card-footer">Lines Deleted</div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="dash-card">
-                <div class="dash-card-header">Andriy Skulish</div>
-                <div class="dash-card-value green">154</div>
+                <div class="dash-card-header">{{topAchievers.lines_a.winner}}</div>
+                <div class="dash-card-value green">{{topAchievers.lines_a.value}}</div>
                 <div class="dash-card-footer">Lines Added</div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="dash-card">
-                <div class="dash-card-header">Andriy Skulish</div>
-                <div class="dash-card-value blue">6</div>
+                <div class="dash-card-header">{{topAchievers.commits.winner}}</div>
+                <div class="dash-card-value blue">{{topAchievers.commits.value}}</div>
                 <div class="dash-card-footer"># of commits</div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="dash-card">
-                <div class="dash-card-header">Andriy Skulish</div>
-                <div class="dash-card-value green">2.6<span class="size-unit">kB</span></div>
+                <div class="dash-card-header">{{topAchievers.size.winner}}</div>
+                <div class="dash-card-value green">{{byte-units topAchievers.size.value}}</div>
                 <div class="dash-card-footer">Size</div>
             </div>
         </div>
