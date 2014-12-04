@@ -67,12 +67,12 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="dash-chart">
-                <span class="dash-card-header">Chart 1</span>
+                {{line-chart data=reports xKey='date' yKey1='files_a' yKey2="files_r" yKey3='files_c'}}
             </div>
         </div>
         <div class="col-sm-6">
             <div class="dash-chart">
-                <span class="dash-card-header">Chart 2</span>
+                {{line-chart data=reports xKey='date' yKey1='lines_a' yKey2="lines_r"}}
             </div>
         </div>
     </div>
