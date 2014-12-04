@@ -1,16 +1,24 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+    queryParams: ['days'],
+    days: null,
 
     repoSummary: undefined,
 
     init: function() {
         this._super();
-        this.set('days', 21);
+    },
+
+    actions: {
+        daysChanged: function() {
+            this.set('days', this.get('daysCounter'));
+        }
     },
 
     contentChanged: function() {
         // Prepare model for Summary
+        this.set('daysCounter', this.get('content.days'));
         this.get('content.summary').then(function(res) {
             var metrics = res.report.metrics;
             this.set('repoSummary', Ember.Object.create({

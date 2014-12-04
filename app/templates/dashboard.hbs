@@ -7,10 +7,10 @@
 </div>
 <hr>
 <div class="days-filter">
-    <div class="days-filter-text">Analyze the last {{days}} days</div>
+    <div class="days-filter-text">Analyze the last {{daysCounter}} days</div>
     <div class="days-filter-slider">
         <div class="slider-min">0</div>
-        {{jqui-slider value=days min=1 max=30 step=1 slide="slideAction"}}
+        {{jqui-slider value=daysCounter min=1 max=30 step=1 stop="daysChanged"}}
         <div class="slider-max">30</div>
     </div>
 </div>
