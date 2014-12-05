@@ -1,3 +1,4 @@
+/* globals Morris */
 import Ember from 'ember';
 
 export default Ember.Component.extend({
@@ -8,7 +9,6 @@ export default Ember.Component.extend({
     data: undefined,
 
     didInsertElement: function() {
-        var yKey = this.get('yKey');
         this.chart = Morris.Bar({
             element: this.get('element').id,
             xkey: this.get('xKey'),
@@ -18,7 +18,7 @@ export default Ember.Component.extend({
             resize: true,
             xLabelAngle: 60,
             gridTextSize: 10,
-            barColors: function(row, series, type) {
+            barColors: function(row) {
                 if (row.y > 0) {
                     return '#00F';
                 } else {
