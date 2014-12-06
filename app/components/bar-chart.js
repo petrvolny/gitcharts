@@ -9,6 +9,9 @@ export default Ember.Component.extend({
     data: undefined,
 
     didInsertElement: function() {
+        var negativeColor = this.get('negativeColor') || '#EE7777',
+            positiveColor = this.get('positiveColor') || '#7777EE';
+
         this.chart = Morris.Bar({
             element: this.get('element').id,
             xkey: this.get('xKey'),
@@ -20,9 +23,9 @@ export default Ember.Component.extend({
             gridTextSize: 10,
             barColors: function(row) {
                 if (row.y > 0) {
-                    return '#00F';
+                    return positiveColor;
                 } else {
-                    return '#F00';
+                    return negativeColor;
                 }
             }
         });
