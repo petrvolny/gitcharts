@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     queryParams: ['days'],
     days: null,
+    isFixedDaysFilter: false,
 
     repoSummary: undefined,
 
@@ -84,8 +85,8 @@ export default Ember.Controller.extend({
         }
     }.property('reports'),
 
-    _sumFor: function(arr, key) {
-        return this.get(arr).reduce(function(prev, curr) {
+    _sumFor: function(arrayProp, key) {
+        return this.get(arrayProp).reduce(function(prev, curr) {
             return prev + curr[key];
         }, 0);
     }
