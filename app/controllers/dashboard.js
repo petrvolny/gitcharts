@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
     queryParams: ['days'],
     days: null,
     isFixedDaysFilter: false,
+    isBiggerMargin: Ember.computed.alias('isFixedDaysFilter'),
 
     repoSummary: undefined,
 
