@@ -22,6 +22,10 @@ hr {
     color: #7F96EC;
 }
 
+.grey {
+    color: #979797;
+}
+
 .dash-card-common {
     margin: 15px 0 15px 0;
     background: #FFFFFF;
@@ -174,9 +178,25 @@ hr {
 .dash-chart {
     .dash-card-common;
     height: 300px;
+
+    &.with-totals {
+        height: 400px;
+    }
 }
 
 .chart {
     width: 100%;
     height: 100%;
+}
+
+.chart-total {
+    margin: 5px 0 5px 0;
+    font-family: HelveticaNeue-Light;
+    font-size: 30px;
+    line-height: 49px;
+    letter-spacing: 3px;
+}
+
+.chart-wrapper {
+    height: 325px;
 }
