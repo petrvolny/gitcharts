@@ -17,10 +17,13 @@ export default Ember.Component.extend({
             xkey: this.get('xKey'),
             ykeys: [this.get('yKey')],
             labels: [this.get('yKey')],
-            hideHover: 'always',
+            hideHover: 'false',
             resize: true,
             xLabelAngle: 60,
             gridTextSize: 10,
+            hoverCallback: function(index, options, content) {
+                return(content);
+            },
             barColors: function(row) {
                 if (row.y > 0) {
                     return positiveColor;
