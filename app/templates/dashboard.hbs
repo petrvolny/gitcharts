@@ -9,7 +9,7 @@
 <div id="days-filter" {{bind-attr class=":days-filter isFixedDaysFilter"}}>
     <div class="days-filter-text">Analyze the last <b>{{daysCounter}}</b> days</div>
     <div class="days-filter-slider">
-        <div class="slider-min">0</div>
+        <div class="slider-min">1</div>
         {{jqui-slider value=daysCounter min=1 max=30 step=1 stop="daysChanged"}}
         <div class="slider-max">30</div>
     </div>
