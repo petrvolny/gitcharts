@@ -26,12 +26,15 @@ export default Ember.Component.extend({
             element: this.get('element').id,
             xkey: this.get('xKey'),
             ykeys: this.get('keys'),
-            labels: this.get('keys'),
-            hideHover: 'always',
+            hideHover: 'false',
             resize: true,
             xLabelAngle: 60,
             gridTextSize: 10,
-            lineColors: ['#81C870', '#EC7F7F', '#979797']
+            lineColors: ['#81C870', '#EC7F7F', '#979797'],
+            labels: ['Added', 'Deleted', 'Changed'],
+            hoverCallback: function(index, options, content) {
+                return(content);
+            },
         });
     },
 
