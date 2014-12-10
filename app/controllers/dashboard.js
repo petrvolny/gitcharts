@@ -86,6 +86,18 @@ export default Ember.Controller.extend({
         }
     }.property('reports'),
 
+    commitsTotal: function() {
+        if (this.get('reports')) {
+            return this._sumFor('reports', 'commits');
+        }
+    }.property('reports'),
+
+    sizeTotal: function() {
+        if (this.get('reports')) {
+            return this._sumFor('reports', 'size');
+        }
+    }.property('reports'),
+
     _sumFor: function(arrayProp, key) {
         return this.get(arrayProp).reduce(function(prev, curr) {
             return prev + curr[key];

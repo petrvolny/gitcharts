@@ -52,13 +52,13 @@
 <div class="charts">
     <div class="row">
         <div class="col-sm-6">
-            <div class="dash-headline">COMMITS</div>
+            <div class="dash-headline">{{commitsTotal}} COMMITS</div>
             <div class="dash-chart">
                 {{bar-chart data=reports xKey='date' yKey='commits' positiveColor='#7F96EC'}}
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="dash-headline">SIZE</div>
+            <div class="dash-headline">{{byte-units sizeTotal}} SIZE</div>
             <div class="dash-chart">
                 {{bar-chart data=reports xKey='date' yKey='size' positiveColor='#81C870' negativeColor='#EC7F7F'}}
             </div>
