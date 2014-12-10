@@ -52,15 +52,31 @@
 <div class="charts">
     <div class="row">
         <div class="col-sm-6">
-            <div class="dash-headline">{{commitsTotal}} COMMITS</div>
-            <div class="dash-chart">
-                {{bar-chart data=reports xKey='date' yKey='commits' positiveColor='#7F96EC'}}
+            <div class="dash-headline">COMMITS</div>
+            <div class="dash-chart with-totals">
+                <div class="col-xs-12 text-center">
+                    <div class="chart-total with-totals">
+                        <div class="blue">{{commitsTotal}}</div>
+                        <div class="dash-card-footer">Commits</div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    {{bar-chart data=reports xKey='date' yKey='commits' positiveColor='#7F96EC'}}
+                </div>
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="dash-headline">{{byte-units sizeTotal}} SIZE</div>
-            <div class="dash-chart">
-                {{bar-chart data=reports xKey='date' yKey='size' positiveColor='#81C870' negativeColor='#EC7F7F'}}
+            <div class="dash-headline">SIZE</div>
+            <div class="dash-chart with-totals">
+                <div class="col-xs-12 text-center">
+                    <div class="chart-total">
+                        <div class="green">{{byte-units sizeTotal}}</div>
+                        <div class="dash-card-footer">Size</div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    {{bar-chart data=reports xKey='date' yKey='size' positiveColor='#81C870' negativeColor='#EC7F7F'}}
+                </div>
             </div>
         </div>
     </div>
