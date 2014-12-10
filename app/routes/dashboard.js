@@ -15,10 +15,10 @@ export default Ember.Route.extend({
 
         return Ember.Object.create({
             days: days,
-            summary: Ember.$.getJSON('/p/'+project+'/r/summary'),
-            topAchievers: Ember.$.getJSON('/p/'+project+'/r/winners'),
-            reports: Ember.$.getJSON('/p/'+project+'/r/last_x_days?days='+days),
-            filesChanged: Ember.$.getJSON('/p/'+project+'/r/files_changed?days='+days),
+            summary: Ember.$.getJSON('/api/p/'+project+'/r/summary'),
+            topAchievers: Ember.$.getJSON('/api/p/'+project+'/r/winners'),
+            reports: Ember.$.getJSON('/api/p/'+project+'/r/last_x_days?days='+days),
+            filesChanged: Ember.$.getJSON('/api/p/'+project+'/r/files_changed?days='+days),
         });
     }
 });
