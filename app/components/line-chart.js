@@ -31,13 +31,7 @@ export default Ember.Component.extend({
             resize: true,
             xLabelAngle: 60,
             gridTextSize: 10,
-            barColors: function(row) {
-                if (row.y > 0) {
-                    return '#00F';
-                } else {
-                    return '#F00';
-                }
-            }
+            lineColors: ['#81C870', '#EC7F7F', '#979797']
         });
     },
 
