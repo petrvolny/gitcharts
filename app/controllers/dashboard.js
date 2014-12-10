@@ -61,6 +61,10 @@ export default Ember.Controller.extend({
                 };
             }));
         }.bind(this));
+
+        this.get('content.filesChanged').then(function(res) {
+            this.set('filesChanged', res.report.metrics.sum);
+        }.bind(this));
     }.observes('content'),
 
     linesTotals: function() {
