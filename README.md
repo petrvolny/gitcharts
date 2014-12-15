@@ -18,7 +18,7 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* `ember server`
+* `ember server --proxy http://gitcharts.herokuapp.com`
 * Visit your app at http://localhost:4200.
 
 ### Running Tests
