@@ -1,7 +1,22 @@
 <nav class="navbar navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Linux</a>
+    <div class="container-fluid text-center">
+        <div class="navbar-header col-xs-4">
+            <a class="navbar-brand" href="#"><img src="/assets/briskat_logo.png"></a>
+        </div>
+        <div class="col-xs-4">
+            <div role="presentation" class="dropdown project-dropdown">
+                <a class="dropdown-toggle project-picker" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  {{activeProject}} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu project-menu" role="menu">
+                    {{#each project in model.projects}}
+                        <li role="presentation">{{#link-to 'dashboard' project.name}}{{project.name}}{{/link-to}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-about">About</button>
         </div>
     </div>
 </nav>

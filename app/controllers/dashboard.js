@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+    needs: ['application'],
     queryParams: ['days'],
     days: null,
     isFixedDaysFilter: false,
@@ -11,6 +12,10 @@ export default Ember.Controller.extend({
     init: function() {
         this._super();
     },
+
+    projectNameChanged: function() {
+        this.set('controllers.application.activeProject', this.get('model.projectName'));
+    }.observes('model.projectName'),
 
     actions: {
         daysChanged: function() {

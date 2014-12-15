@@ -14,6 +14,7 @@ export default Ember.Route.extend({
         var days = params.days || 7;
 
         return Ember.Object.create({
+            projectName: project,
             days: days,
             summary: Ember.$.getJSON('/api/p/'+project+'/r/summary'),
             topAchievers: Ember.$.getJSON('/api/p/'+project+'/r/winners'),
