@@ -26,6 +26,7 @@ export default Ember.Component.extend({
             element: this.get('element').id,
             xkey: this.get('xKey'),
             ykeys: this.get('keys'),
+            parseTime: false,
             hideHover: 'false',
             smooth: 'false',
             resize: true,
