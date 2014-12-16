@@ -98,12 +98,12 @@
                 </div>
                 <div class="col-xs-4 text-center">
                     <div class="chart-total">
-                        <div class="grey">{{filesChanged}}</div>
+                        <div class="grey">{{filesTotals.changed}}</div>
                         <div class="dash-card-footer">Changed</div>
                     </div>
                 </div>
                 <div class="chart-wrapper">
-                    {{line-chart data=reports xKey='date' yKey1='files_a' yKey2="files_r" yKey3='files_c'}}
+                    {{line-chart data=filesReport xKey='date' yKey1='files_a' yKey2="files_r" yKey3='files_c'}}
                 </div>
             </div>
         </div>

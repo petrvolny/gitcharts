@@ -67,8 +67,17 @@ export default Ember.Controller.extend({
             }));
         }.bind(this));
 
-        this.get('content.filesChanged').then(function(res) {
-            this.set('filesChanged', res.report.metrics.sum);
+        this.get('content.filesReport').then(function(res) {
+            var dates = res.report.x;
+            var metrics = res.report.metrics;
+            this.set('filesReport', dates.map(function(date, idx) {
+                return {
+                    date: date,
+                    files_a: metrics.files_a[idx],
+                    files_r: metrics.files_r[idx],
+                    files_c: metrics.files_c[idx],
+                };
+            }));
         }.bind(this));
     }.observes('content'),
 
@@ -84,7 +93,7 @@ export default Ember.Controller.extend({
     }.property('reports'),
 
     filesTotals: function() {
-        if (this.get('reports')) {
+        if (this.get('filesReport')) {
             return {
                 added: this._sumFor('reports', 'files_a'),
                 deleted: this._sumFor('reports', 'files_r'),

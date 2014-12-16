@@ -19,7 +19,7 @@ export default Ember.Route.extend({
             summary: Ember.$.getJSON('/api/p/'+project+'/r/summary'),
             topAchievers: Ember.$.getJSON('/api/p/'+project+'/r/winners'),
             reports: Ember.$.getJSON('/api/p/'+project+'/r/last_x_days?days='+days),
-            filesChanged: Ember.$.getJSON('/api/p/'+project+'/r/files_changed?days='+days),
+            filesReport: Ember.$.getJSON('/api/p/'+project+'/r/last_x_days_files?days='+days)
         });
     }
 });
